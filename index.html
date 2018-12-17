@@ -1,125 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>瞑想シュミレーター</title>
-    <style>
-      .relative {
-        position: relative;
-      }
-      .monk {
-        position: absolute;
-        bottom: 20px;
-        left: 250px;
-      }
-      .balloon {
-        fill: white;
-        stroke: black;
-        stroke-width: 2
-      }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  </head>
-  <body>
-    <h1>瞑想シュミレーター</h1>
-    <div id="app">
-      <p v-for="(desire, index) in desires">
-        煩悩{{index+1}}：<input v-model="desire.text"/>
-      </p>
-      <button v-on:click="stopGame($event)">
-        <span v-if="isPaused">スタート</span>
-        <span v-if="!isPaused">一時停止</span>
-      </button>
-      <div class="relative">
-        <svg width="640" height="480">
-          <rect width="640" height="480" style="fill:rgb(160,216,239)"/>
-          <g v-for="balloon in balloons"
-          :opacity="balloon.opacity"
-          v-on:click="touchBalloon(balloon.id)"
-          >
-              <ellipse class="balloon"
-              :cx="balloon.x + 55"
-              :cy="balloon.y"
-              rx="90" ry="45">
-              </ellipse>
-              <text :x="balloon.x" :y="balloon.y">
-                {{balloon.text}}
-              </text>
-          </g>
-          <rect width="600" height="40" x="20" y="10" style="fill:rgb(169,169,169)"/>
-          <rect :width="5.8 * oxygen" height="20" x="30" y="20" style="fill:rgb(255,100,169)"/>
-        </svg>
-        <img src="zazen_man.png" alt="man" width="120" class="monk"/>
-      </div>
-    </div>
-
-    <script>
-      let app = new Vue({
-        el: '#app',
-        data: {
-          desires: [
-            {text: 'お金欲しい'},
-            {text: 'セックスしたい'},
-            {text: 'ステーキ食べたい'}
-          ],
-          balloons: [],
-          oxygen: 100,
-          balloonInterval: 20,
-          elapsedTime: 0,
-          lifespan: 40,
-          denom: 20**2,
-          idx: 0,
-          isPaused: true
-        },
-        methods: {
-          generateBalloon: function() {
-            this.balloons.push({
-              id: this.idx,
-              text: this.desires[Math.floor(Math.random() * this.desires.length)].text,
-              x: Math.random() * 550 + 10,
-              y: Math.random() * 370 + 70,
-              age: 0,
-              opacity: 0
-            })
-            this.idx++
-          },
-          manageBalloon: function() {
-            this.balloons.forEach((balloon) => {
-              balloon.age += 1
-              balloon.opacity = -balloon.age*(balloon.age - this.lifespan)/this.denom
-            })
-            this.balloons = this.balloons.filter(balloon => balloon.age < this.lifespan)
-          },
-          touchBalloon: function(id) {
-            this.oxygen += 10
-            if (this.oxygen > 100) this.oxygen = 100
-            this.balloons = this.balloons.filter(balloon => balloon.id != id)
-          },
-          update: function() {
-            const parent = this
-            setInterval(function() {
-              if (!parent.isPaused) { 
-              if (parent.elapsedTime % parent.balloonInterval == 0) {
-                parent.generateBalloon()
-              }
-              parent.manageBalloon()
-              parent.oxygen -= 0.5
-              if (parent.oxygen < 0) {
-                parent.oxygen = 0
-                alert("GAME OVER")
-              }
-              parent.elapsedTime += 1
-              }
-            }, 50)
-          },
-          stopGame: function(event) {
-            event.preventDefault()
-            this.isPaused = !this.isPaused
-          }
-        },
-        mounted: function() {
-          this.update()
-        }
-      })
-    </script>
-  </body>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <v-container grid-list-sm>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card>
+                <v-card-title class="headline grey lighten-2">How to play</v-card-title>
+                <v-card-text>
+                  次々と投稿される誹謗中傷コメントをクリックして削除しよう<br>
+                  ただし投稿の中には普通のコメントもあるので、これらはクリックすると減点<br>
+                  制限時間内により多くのコメントを削除できたら勝ち<br>
+                  <v-btn color="info">スタート</v-button>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex xs12>
+              <v-card>
+                <v-toolbar color="cyan" dark>     
+                  <v-toolbar-title>コメント (新着{{num_messages}}件)</v-toolbar-title>
+                </v-toolbar>
+        
+                <v-list two-line>
+                  <template v-for="(item, index) in items">
+                    <v-subheader
+                      v-if="item.header"
+                      :key="item.header"
+                    >
+                      {{ item.header }}
+                    </v-subheader>
+        
+                    <v-list-tile
+                      v-else
+                      :key="item.title"
+                      avatar
+                      @click="selectAsSpam"
+                    >
+                      <v-list-tile-avatar>
+                        <img :src="item.avatar">
+                      </v-list-tile-avatar>
+        
+                      <v-list-tile-content>
+                        <v-list-tile-sub-title v-html="item.name"></v-list-tile-sub-title>
+                        <v-list-tile-title v-html="item.comment"></v-list-tile-title>
+                      </v-list-tile-content>
+                      <v-list-tile-action>
+                        <v-icon>bug_report</v-icon>
+                      </v-list-tile-action>
+                    </v-list-tile>
+                    <v-divider
+                      :inset="true"
+                      :key="index"
+                    ></v-divider>
+                  </template>
+                </v-list>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="./app.js"></script>
+</body>
 </html>
