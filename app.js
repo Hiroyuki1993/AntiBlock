@@ -359,7 +359,7 @@ new Vue({
       let index_pic = Math.floor(Math.random() * 6) + 1
       this.num_messages++
       this.items.push({
-        name: Math.random().toString(36).slice(-8),
+        name: "ユーザー名：" + Math.random().toString(36).slice(-8),
         avatar: "./icons/anti" + index_pic + ".png",
         comment: this.source[index].text
       })
@@ -371,7 +371,7 @@ new Vue({
       const parent = this
       setInterval(function(){
         parent.addComment()
-      }, 5000)
+      }, 500)
     }
   },
   mounted: function() {
