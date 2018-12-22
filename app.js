@@ -346,12 +346,18 @@ new Vue({
       ],
       num_messages: 0,
       new_comment: [],
-      comment_history: []
+      comment_history: [],
+      score: 0
     }
   },
   methods: {
-    selectAsSpam: function() {
-
+    setSpam: function() {
+      this.new_comment[0].spam = true
+      if (this.new_comment[0].anti) {
+        this.score++
+      } else {
+        this.score--
+      }
     },
     addComment: function() {
       let index = Math.floor(Math.random() * this.source.length)
@@ -360,9 +366,11 @@ new Vue({
       this.num_messages++
 
       this.new_comment.push({
-        name: "ユーザー名：" + Math.random().toString(36).slice(-8) + " " + now.toLocaleTimeString(),
+        name: "user：" + Math.random().toString(36).slice(-8) + " " + now.toLocaleTimeString(),
         avatar: "./icons/anti" + index_pic + ".png",
-        comment: this.source[index].text
+        comment: this.source[index].text,
+        anti: this.source[index].anti,
+        spam: false
       })
 
       if(this.new_comment.length > 1){

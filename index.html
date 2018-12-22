@@ -26,7 +26,7 @@
             <v-flex xs12>
               <v-card>
                 <v-toolbar color="cyan" dark>     
-                  <v-toolbar-title>コメント ({{num_messages}}件)</v-toolbar-title>
+                  <v-toolbar-title>コメント ({{num_messages}}件) 得点:{{score}}点</v-toolbar-title>
                 </v-toolbar>
         
                 <v-list subheader>
@@ -35,8 +35,12 @@
                     v-for="item in new_comment"
                     :key="item.name"
                     avatar
-                    @click=""
+                    ripple
+                    @click="setSpam"
                   >
+                    <v-list-tile-action v-if="item.spam">
+                      <v-icon color="red">warning</v-icon>
+                    </v-list-tile-action>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
@@ -60,6 +64,9 @@
                     avatar
                     @click=""
                   >
+                    <v-list-tile-action v-if="item.spam">
+                      <v-icon color="red">warning</v-icon>
+                    </v-list-tile-action>
                     <v-list-tile-avatar>
                       <img :src="item.avatar">
                     </v-list-tile-avatar>
