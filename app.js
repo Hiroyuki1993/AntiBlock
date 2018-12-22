@@ -345,9 +345,8 @@ new Vue({
         }
       ],
       num_messages: 0,
-      items: [
-        { header: '新着' }
-      ]
+      new_comment: [],
+      comment_history: []
     }
   },
   methods: {
@@ -357,21 +356,28 @@ new Vue({
     addComment: function() {
       let index = Math.floor(Math.random() * this.source.length)
       let index_pic = Math.floor(Math.random() * 6) + 1
+      let now = new Date()
       this.num_messages++
-      this.items.push({
-        name: "ユーザー名：" + Math.random().toString(36).slice(-8),
+
+      this.new_comment.push({
+        name: "ユーザー名：" + Math.random().toString(36).slice(-8) + " " + now.toLocaleTimeString(),
         avatar: "./icons/anti" + index_pic + ".png",
         comment: this.source[index].text
       })
-      if (this.items.length > 6) {
-        this.items.shift()
+
+      if(this.new_comment.length > 1){
+        this.comment_history.unshift(this.new_comment[0])
+        this.new_comment.shift()
+      }
+      if(this.comment_history.length > 5) {
+        this.comment_history.pop()
       }
     },
     update: function() {
       const parent = this
       setInterval(function(){
         parent.addComment()
-      }, 500)
+      }, 2000)
     }
   },
   mounted: function() {
