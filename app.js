@@ -347,17 +347,13 @@ new Vue({
       num_messages: 0,
       new_comment: [],
       comment_history: [],
-      score: 0
+      score: 50,
+      levels: ['EASY', 'NORMAL', 'HARD']
     }
   },
   methods: {
     setSpam: function() {
       this.new_comment[0].spam = true
-      if (this.new_comment[0].anti) {
-        this.score++
-      } else {
-        this.score--
-      }
     },
     addComment: function() {
       let index = Math.floor(Math.random() * this.source.length)
@@ -374,6 +370,11 @@ new Vue({
       })
 
       if(this.new_comment.length > 1){
+        if(this.new_comment[0].anti == false & this.new_comment[0].spam == false){
+          this.score += 5
+        } else if (this.new_comment[0].anti == true & this.new_comment[0].spam == false){
+          this.score -= 5
+        }
         this.comment_history.unshift(this.new_comment[0])
         this.new_comment.shift()
       }
