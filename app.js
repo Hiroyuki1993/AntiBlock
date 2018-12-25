@@ -351,13 +351,28 @@ new Vue({
       levels: ['EASY', 'NORMAL', 'HARD'],
       level: 'EASY',
       startFlag: false,
-      interval: 1000,
-      timeCounter: 0
+      interval: 2000,
+      timeCounter: 0,
+      dialog: false,
+      time: 0,
+      twitterLink: "",
+      twitterUrl: "http://twitter.com/share?url=" + encodeURIComponent("https://hiroyuki1993.github.io/AntiBlock") + "&hashtags=" + encodeURI("炎上シュミレーター") + "&text=" + encodeURI("炎上シュミレーター\nメンタル崩壊までの時間："),
     }
   },
   methods: {
     startGame: function() {
       this.startFlag = true
+      this.time = 0
+    },
+    resetGame: function() {
+      this.startFlag = false
+      this.time = 0
+      this.score = 50
+      this.dialog = false
+      this.timeCounter = 0
+      this.num_messages = 0
+      this.new_comment = []
+      this.comment_history = []
     },
     setSpam: function() {
       this.new_comment[0].spam = true
@@ -385,6 +400,9 @@ new Vue({
       if(this.new_comment.length > 1){
         if(this.new_comment[0].anti == false & this.new_comment[0].spam == false){
           this.score += 5
+          if (this.score > 100) {
+            this.score = 100
+          }
         } else if (this.new_comment[0].anti == true & this.new_comment[0].spam == false){
           this.score -= 10
         }
@@ -412,6 +430,12 @@ new Vue({
         if (parent.timeCounter == parent.interval){
           parent.addComment()
           parent.timeCounter = 0
+        }
+        if (parent.score <= 0) {
+          parent.dialog = true
+          parent.twitterLink = parent.twitterUrl + parent.time.toFixed(1) + encodeURI("秒\n")
+        } else if (parent.dialog == false) {
+          parent.time += 0.1
         }
       }, 100)
     }

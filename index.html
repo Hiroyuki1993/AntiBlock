@@ -31,7 +31,7 @@
                   <v-progress-linear v-model="score"></v-progress-linear>
                 </template>
                 </v-card-title>
-                <v-card-actions>
+                <v-card-actions v-if="!startFlag">
                   <v-flex xs3><p class="headline">炎上レベル</p></v-flex>
                   <v-flex xs4>
                     <v-overflow-btn 
@@ -42,17 +42,18 @@
                     ></v-overflow-btn>
                   </v-flex>
                   <v-flex offset-xs1 xs3>
-                    <v-btn @click="startGame" v-if="!startFlag">START</v-btn>
-                    <v-btn @click="startGame" v-if="startFlag">RESET</v-btn>
+                    <v-btn @click="startGame">START</v-btn>
                   </v-flex>
-                  
+                </v-card-actions>
+                <v-card-actions v-if="startFlag">
+                  <p v-if="startFlag" class="headline">経過時間 {{time.toFixed(1)}}秒</p>
                 </v-card-actions>
               </v-card>
             </v-flex>
             <v-flex xs12>
               <v-card>
                 <v-toolbar color="cyan" dark>     
-                  <v-toolbar-title>コメント ({{num_messages}}件) 得点:{{score}}点</v-toolbar-title>
+                  <v-toolbar-title>コメント ({{num_messages}}件)</v-toolbar-title>
                 </v-toolbar>
         
                 <v-list subheader>
@@ -75,7 +76,6 @@
                         <v-list-tile-sub-title v-html="item.name"></v-list-tile-sub-title>
                       <v-list-tile-title v-html="item.comment"></v-list-tile-title>
                     </v-list-tile-content>
-
                   </v-list-tile>
                 </v-list>
           
@@ -107,6 +107,39 @@
               </v-card>
             </v-flex>
           </v-layout>
+          <v-dialog
+            v-model="dialog"
+            max-width="290"
+          >
+            <v-card>
+              <v-card-title class="headline">Game Over</v-card-title>
+
+              <v-card-text>
+                メンタル耐久時間: {{time.toFixed(1)}}秒
+              </v-card-text>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+
+                <v-btn
+                  color="green darken-1"
+                  flat="flat"
+                  target = "_blank"
+                  :href= "twitterLink"
+                >
+                  結果をつぶやく
+                </v-btn>
+
+                <v-btn
+                  color="green darken-1"
+                  flat="flat"
+                  @click="resetGame"
+                >
+                  RESTART
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
         </v-container>
       </v-content>
     </v-app>
