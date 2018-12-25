@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>炎上エミュレータ</title>
+  <title>炎上シュミレーター</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -14,28 +14,36 @@
           <v-layout row wrap>
             <v-flex xs12>
               <v-card>
-                <v-card-title class="headline grey lighten-2">How to play</v-card-title>
+                <v-card-title class="headline grey lighten-2">炎上シュミレーター</v-card-title>
                 <v-card-text>
-                  次々と投稿される誹謗中傷コメントをクリックして削除しよう<br>
-                  ただし投稿の中には普通のコメントもあるので、これらはクリックすると減点<br>
-                  制限時間内により多くのコメントを削除できたら勝ち<br>
+                  <blockquote class="headline font-italic">アンチコメされた場合はコメント削除してユーザーブロックしとけばそれでOK</blockquote>
+                  <p>Youtubeに動画投稿したらなぜか炎上してしまった。次々と投稿される誹謗中傷コメントをクリックしてスパム報告しよう！
+                  ただし投稿の中にはファンのコメントもあるので、こちらはクリックしないように。
+                  アンチコメントを野放しにする度にメンタルがやられ、メンタル崩壊ゲージが0になったらゲームオーバーです。</p>
                 </v-card-text>
               </v-card>
             </v-flex>
-            <v-flex offset-xs2 xs8 offset-xs2>
+            <v-flex offset-xs3 xs6 offset-xs3>
               <v-card>
-                <v-img src="./icons/video.jpg" contain></v-img>
+                <v-img src="./icons/ddydd.png" contain></v-img>
                 <v-card-title>
-                  <h2>メンタルのゆとり</h2>
+                  <h2>メンタル崩壊まで</h2>
                   <v-progress-linear v-model="score"></v-progress-linear>
                 </template>
                 </v-card-title>
                 <v-card-actions>
-                  <v-flex xs6>
-                    <v-overflow-btn :items="levels"></v-overflow-btn>
+                  <v-flex xs3><p class="headline">炎上レベル</p></v-flex>
+                  <v-flex xs4>
+                    <v-overflow-btn 
+                    :items="levels" 
+                    v-model="level" 
+                    @change="changeLevel"
+                    v-if="!startFlag"
+                    ></v-overflow-btn>
                   </v-flex>
-                  <v-flex offset-xs1 xs5>
-                    <v-btn>START</v-btn>
+                  <v-flex offset-xs1 xs3>
+                    <v-btn @click="startGame" v-if="!startFlag">START</v-btn>
+                    <v-btn @click="startGame" v-if="startFlag">RESET</v-btn>
                   </v-flex>
                   
                 </v-card-actions>

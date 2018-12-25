@@ -348,14 +348,27 @@ new Vue({
       new_comment: [],
       comment_history: [],
       score: 50,
-      levels: ['EASY', 'NORMAL', 'HARD']
+      levels: ['EASY', 'NORMAL', 'HARD'],
+      level: 'EASY',
+      startFlag: false,
+      interval: 1000,
+      timeCounter: 0
     }
   },
   methods: {
+    startGame: function() {
+      this.startFlag = true
+    },
     setSpam: function() {
       this.new_comment[0].spam = true
+      if(this.new_comment[0].anti == false) {
+        this.score -= 10
+      }
     },
     addComment: function() {
+      if (this.startFlag == false) {
+        return
+      }
       let index = Math.floor(Math.random() * this.source.length)
       let index_pic = Math.floor(Math.random() * 6) + 1
       let now = new Date()
@@ -373,7 +386,7 @@ new Vue({
         if(this.new_comment[0].anti == false & this.new_comment[0].spam == false){
           this.score += 5
         } else if (this.new_comment[0].anti == true & this.new_comment[0].spam == false){
-          this.score -= 5
+          this.score -= 10
         }
         this.comment_history.unshift(this.new_comment[0])
         this.new_comment.shift()
@@ -382,11 +395,25 @@ new Vue({
         this.comment_history.pop()
       }
     },
+    changeLevel: function() {
+      this.timeCounter = 0
+      if (this.level == 'EASY') {
+        this.interval = 2000
+      } else if (this.level == 'NORMAL') {
+        this.interval = 1200
+      } else {
+        this.interval = 700
+      }
+    },
     update: function() {
       const parent = this
       setInterval(function(){
-        parent.addComment()
-      }, 2000)
+        parent.timeCounter += 100
+        if (parent.timeCounter == parent.interval){
+          parent.addComment()
+          parent.timeCounter = 0
+        }
+      }, 100)
     }
   },
   mounted: function() {
