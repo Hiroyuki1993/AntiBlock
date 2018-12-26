@@ -317,7 +317,7 @@ new Vue({
       dialog: false,
       time: 0,
       twitterLink: "",
-      twitterUrl: "http://twitter.com/share?url=" + encodeURIComponent("https://hiroyuki1993.github.io/AntiBlock") + "&hashtags=" + encodeURI("炎上シュミレーター") + "&text=" + encodeURI("【炎上シュミレーター】\n"),
+      twitterUrl: "http://twitter.com/share?url=" + encodeURIComponent("https://enjo-simulator.netlify.com/") + "&hashtags=" + encodeURI("炎上シュミレーター") + "&text=" + encodeURI("【炎上シュミレーター】\n"),
     }
   },
   methods: {
