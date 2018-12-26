@@ -18,7 +18,7 @@
                 <v-card-text>
                   <blockquote class="headline font-italic">アンチコメされた場合はコメント削除してユーザーブロックしとけばそれでOK</blockquote>
                   <p>Youtubeに動画投稿したらなぜか炎上してしまった。次々と投稿される誹謗中傷コメントをクリックしてスパム報告しよう！
-                  ただし投稿の中にはファンのコメントもあるので、こちらはクリックしないように。
+                  ただし投稿の中にはファンのコメントもあるので、こちらはクリックすると減点。
                   アンチコメントを野放しにする度にメンタルがやられ、メンタル崩壊ゲージが0になったらゲームオーバーです。</p>
                 </v-card-text>
               </v-card>
@@ -73,7 +73,7 @@
                     </v-list-tile-avatar>
         
                     <v-list-tile-content>
-                        <v-list-tile-sub-title v-html="item.name"></v-list-tile-sub-title>
+                      <v-list-tile-sub-title v-html="item.name"></v-list-tile-sub-title>
                       <v-list-tile-title v-html="item.comment"></v-list-tile-title>
                     </v-list-tile-content>
                   </v-list-tile>
@@ -115,7 +115,12 @@
               <v-card-title class="headline">Game Over</v-card-title>
 
               <v-card-text>
-                メンタル耐久時間: {{time.toFixed(1)}}秒
+                <p>
+                  炎上レベル: {{level}}<br>
+                  メンタル耐久時間: {{time.toFixed(1)}}秒<br>
+                  ブロックしたアンチ: {{num_anti}} 人
+                </p>
+                
               </v-card-text>
 
               <v-card-actions>

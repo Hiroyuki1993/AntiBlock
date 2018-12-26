@@ -4,47 +4,7 @@ new Vue({
     return {
       source: [
         {
-          "text": "貝塚勃起土竜",
-          "anti": true
-        },
-        {
-          "text": "絵に描いた餅を喉に詰まらせた男",
-          "anti": true
-        },
-        {
-          "text": "音の出る業人",
-          "anti": true
-        },
-        {
-          "text": "こどもおじさん",
-          "anti": true
-        },
-        {
-          "text": "無職ムスタファ・ケマル・アタトュルク",
-          "anti": true
-        },
-        {
-          "text": "日本の識字率を100％未満にした男",
-          "anti": true
-        },
-        {
           "text": "義務教育の限界",
-          "anti": true
-        },
-        {
-          "text": "人生のすべてをまあいいやで誤魔化してきた男",
-          "anti": true
-        },
-        {
-          "text": "つける薬を座薬として服用した男",
-          "anti": true
-        },
-        {
-          "text": "貝塚の闇",
-          "anti": true
-        },
-        {
-          "text": "オフパコ妄想おじさん",
           "anti": true
         },
         {
@@ -52,91 +12,11 @@ new Vue({
           "anti": true
         },
         {
-          "text": "セミの抜け殻に精子詰めてそう",
-          "anti": true
-        },
-        {
-          "text": "ダニと週八で交尾してそう",
-          "anti": true
-        },
-        {
-          "text": "ほならね理論提唱者",
-          "anti": true
-        },
-        {
-          "text": "親の金を出会い系につぎ込む無職",
-          "anti": true
-        },
-        {
-          "text": "広島産無職",
-          "anti": true
-        },
-        {
-          "text": "大阪製土竜",
-          "anti": true
-        },
-        {
-          "text": "泉南汚物",
-          "anti": true
-        },
-        {
-          "text": "泉南ゴブリン",
-          "anti": true
-        },
-        {
-          "text": "妖怪オクチアナル",
-          "anti": true
-        },
-        {
-          "text": "人生もイージーモードを選択できると思っていた男",
-          "anti": true
-        },
-        {
-          "text": "ガイージー",
-          "anti": true
-        },
-        {
-          "text": "のびハザで義務教育を終えた男",
-          "anti": true
-        },
-        {
-          "text": "のびハザに育てられた男",
-          "anti": true
-        },
-        {
-          "text": "初体験をのびハザで済ませた男",
-          "anti": true
-        },
-        {
-          "text": "のびハザに永久就職した男",
-          "anti": true
-        },
-        {
-          "text": "脳とのびハザを交換された男",
-          "anti": true
-        },
-        {
-          "text": "貝塚のモーツァルト",
-          "anti": true
-        },
-        {
-          "text": "キス待ち無職",
+          "text": "最低野郎",
           "anti": true
         },
         {
           "text": "生きる価値無し",
-          "anti": true
-        },
-        {
-          "text": "意識高い系ガイジ",
-          "anti": true
-        },
-        {
-          "text": "オフ会0人",
-          "anti": true
-        },
-        {
-          "text": "貝塚うんこ製造機",
           "anti": true
         },
         {
@@ -152,31 +32,7 @@ new Vue({
           "anti": true
         },
         {
-          "text": "最低野郎",
-          "anti": true
-        },
-        {
-          "text": "終身名誉ホモのおもちゃ",
-          "anti": true
-        },
-        {
-          "text": "セックスむえん",
-          "anti": true
-        },
-        {
-          "text": "精子スプリンクラー",
-          "anti": true
-        },
-        {
           "text": "底辺YouTuber",
-          "anti": true
-        },
-        {
-          "text": "トロピカル無職",
-          "anti": true
-        },
-        {
-          "text": "難波わいせつ入道",
           "anti": true
         },
         {
@@ -196,10 +52,6 @@ new Vue({
           "anti": true
         },
         {
-          "text": "モグラ人間",
-          "anti": true
-        },
-        {
           "text": "ありとあらゆる万事から拒絶された男",
           "anti": true
         },
@@ -212,31 +64,67 @@ new Vue({
           "anti": true
         },
         {
-          "text": "後ろの襖から忍者が出てきてこいつを連れ去ってほしい",
+          "text": "六角形のグラフなら限りなく点に近い",
           "anti": true
         },
         {
-          "text": "いいところが見当たらない男",
+          "text": "いいところが見当たらない",
           "anti": true
         },
         {
-          "text": "いつも自宅のトイレで迷子になる男",
-          "anti": true
-        },
-        {
-          "text": "回収されたペットボトルの蓋より使えない男",
-          "anti": true
-        },
-        {
-          "text": "貝塚市を財政破綻に追い込んだ男",
-          "anti": true
-        },
-        {
-          "text": "ガキの精神構造のまま体だけ成長してしまった大人",
+          "text": "体は大人、心は子ども",
           "anti": true
         },
         {
           "text": "神がおふざけで作った男",
+          "anti": true
+        },
+        {
+          "text": "オフ会0人",
+          "anti": true
+        },
+        {
+          "text": "うんこ製造機",
+          "anti": true
+        },
+        {
+          "text": "頭トロピカル",
+          "anti": true
+        },
+        {
+          "text": "音の出るゴミ",
+          "anti": true
+        },
+        {
+          "text": "気持ち悪い",
+          "anti": true
+        },
+        {
+          "text": "セクハラ野郎",
+          "anti": true
+        },
+        {
+          "text": "働け",
+          "anti": true
+        },
+        {
+          "text": "こうはなりたくない",
+          "anti": true
+        },
+        {
+          "text": "才能ない",
+          "anti": true
+        },
+        {
+          "text": "つまらなすぎる",
+          "anti": true
+        },
+        {
+          "text": "早く消えてほしい",
+          "anti": true
+        },
+        {
+          "text": "詐欺師",
           "anti": true
         },
         {
@@ -248,7 +136,99 @@ new Vue({
           "anti": true
         },
         {
-          "text": "六角形のグラフなら限りなく点に近い男",
+          "text": "回収されたペットボトルの蓋より使えない",
+          "anti": true
+        },
+        {
+          "text": "時間返せ",
+          "anti": true
+        },
+        {
+          "text": "生理的に無理",
+          "anti": true
+        },
+        {
+          "text": "吐いた",
+          "anti": true
+        },
+        {
+          "text": "他人を馬鹿にしている",
+          "anti": true
+        },
+        {
+          "text": "これを見せられる側の気持ちも考えろ",
+          "anti": true
+        },
+        {
+          "text": "ナイチンゲールに殺された男",
+          "anti": true
+        },
+        {
+          "text": "人を不快にさせる天才",
+          "anti": true
+        },
+        {
+          "text": "通報しました",
+          "anti": true
+        },
+        {
+          "text": "頭が痛くなった",
+          "anti": true
+        },
+        {
+          "text": "ばか",
+          "anti": true
+        },
+        {
+          "text": "小学校からやりなおせ",
+          "anti": true
+        },
+        {
+          "text": "モグラ人間",
+          "anti": true
+        },
+        {
+          "text": "わいせつ物陳列罪",
+          "anti": true
+        },
+        {
+          "text": "汚物",
+          "anti": true
+        },
+        {
+          "text": "親の金を出会い系につぎ込む無職",
+          "anti": true
+        },
+        {
+          "text": "人生のすべてをまあいいやで誤魔化してきた男",
+          "anti": true
+        },
+        {
+          "text": "絵に描いた餅",
+          "anti": true
+        },
+        {
+          "text": "ミジンコの方が役に立ってる",
+          "anti": true
+        },
+        {
+          "text": "騒音",
+          "anti": true
+        },
+        {
+          "text": "Youtube観るのやめます",
+          "anti": true
+        },
+        {
+          "text": "失望しました",
+          "anti": true
+        },
+        {
+          "text": "ユーチューバー辞めろ",
+          "anti": true
+        },
+        {
+          "text": "ゴミ",
           "anti": true
         },
         {
@@ -268,11 +248,7 @@ new Vue({
           "anti": false
         },
         {
-          "text": "常人にも狂人にもできないことをやってのける男",
-          "anti": false
-        },
-        {
-          "text": "世界一人を笑わせた無職",
+          "text": "世界一人を笑わせた男",
           "anti": false
         },
         {
@@ -284,7 +260,7 @@ new Vue({
           "anti": false
         },
         {
-          "text": "最高の無職",
+          "text": "最高",
           "anti": false
         },
         {
@@ -297,14 +273,6 @@ new Vue({
         },
         {
           "text": "動画楽しかった！",
-          "anti": false
-        },
-        {
-          "text": "ファンタジーに火をつけた男",
-          "anti": false
-        },
-        {
-          "text": "世界の上にサングラスをかけた男",
           "anti": false
         },
         {
@@ -321,14 +289,6 @@ new Vue({
         },
         {
           "text": "おい！人気者！",
-          "anti": false
-        },
-        {
-          "text": "アンチを憎んで人を憎まず",
-          "anti": false
-        },
-        {
-          "text": "ファンが居ないと嘆くよりもネカマを信じて傷つくほうが良い",
           "anti": false
         },
         {
@@ -350,13 +310,14 @@ new Vue({
       score: 50,
       levels: ['EASY', 'NORMAL', 'HARD'],
       level: 'EASY',
+      num_anti: 0,
       startFlag: false,
       interval: 2000,
       timeCounter: 0,
       dialog: false,
       time: 0,
       twitterLink: "",
-      twitterUrl: "http://twitter.com/share?url=" + encodeURIComponent("https://hiroyuki1993.github.io/AntiBlock") + "&hashtags=" + encodeURI("炎上シュミレーター") + "&text=" + encodeURI("炎上シュミレーター\nメンタル崩壊までの時間："),
+      twitterUrl: "http://twitter.com/share?url=" + encodeURIComponent("https://hiroyuki1993.github.io/AntiBlock") + "&hashtags=" + encodeURI("炎上シュミレーター") + "&text=" + encodeURI("【炎上シュミレーター】\n"),
     }
   },
   methods: {
@@ -373,11 +334,14 @@ new Vue({
       this.num_messages = 0
       this.new_comment = []
       this.comment_history = []
+      this.num_anti = 0
     },
     setSpam: function() {
       this.new_comment[0].spam = true
       if(this.new_comment[0].anti == false) {
         this.score -= 10
+      } else {
+        this.num_anti++
       }
     },
     addComment: function() {
@@ -390,7 +354,7 @@ new Vue({
       this.num_messages++
 
       this.new_comment.push({
-        name: "user：" + Math.random().toString(36).slice(-8) + " " + now.toLocaleTimeString(),
+        name: now.toLocaleTimeString(),
         avatar: "./icons/anti" + index_pic + ".png",
         comment: this.source[index].text,
         anti: this.source[index].anti,
@@ -398,13 +362,18 @@ new Vue({
       })
 
       if(this.new_comment.length > 1){
-        if(this.new_comment[0].anti == false & this.new_comment[0].spam == false){
+        if(this.new_comment[0].anti == false & this.new_comment[0].spam == false & this.score > 0){
           this.score += 5
           if (this.score > 100) {
             this.score = 100
           }
         } else if (this.new_comment[0].anti == true & this.new_comment[0].spam == false){
           this.score -= 10
+        }
+        if (this.new_comment[0].anti){
+          this.new_comment[0].name += " アンチ"
+        } else {
+          this.new_comment[0].name += " ファン"
         }
         this.comment_history.unshift(this.new_comment[0])
         this.new_comment.shift()
@@ -433,7 +402,10 @@ new Vue({
         }
         if (parent.score <= 0) {
           parent.dialog = true
-          parent.twitterLink = parent.twitterUrl + parent.time.toFixed(1) + encodeURI("秒\n")
+          let twitterLevel = encodeURI("炎上レベル：") + parent.level + encodeURI("\n")
+          let twitterTime = encodeURI("メンタル崩壊までの時間：") + parent.time.toFixed(1) + encodeURI("秒\n")
+          let twitterAnti = encodeURI("ブロックしたアンチ：") + parent.num_anti + encodeURI("人\n")
+          parent.twitterLink = parent.twitterUrl + twitterLevel + twitterTime + twitterAnti
         } else if (parent.dialog == false) {
           parent.time += 0.1
         }
